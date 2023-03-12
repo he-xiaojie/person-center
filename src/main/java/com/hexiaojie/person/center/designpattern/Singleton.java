@@ -13,7 +13,7 @@ public class Singleton {
      * 3.
      * 统一通过getInstance()方法返回该对象在内存中的唯一实例。 这里是因为static修饰的引用类型在类加载的时候只会在准备阶段分配空间，然后在初始化阶段实例化一次。
      */
-    public static volatile Singleton singleton = null;
+    private static volatile Singleton singleton = null;
 
     //私有的无参构造方法，防止别人在外部实例化
     private Singleton(){
