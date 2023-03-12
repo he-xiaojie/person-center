@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="RemoteRepositoriesConfiguration">
+    <remote-repository>
+      <option name="id" value="maven-neutralcloud" />
+      <option name="name" value="maven-neutralcloud" />
+      <option name="url" value="https://packages.glodon.com/artifactory/maven-neutralcloud-public/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="central" />
+      <option name="name" value="Central Repository" />
+      <option name="url" value="https://repo.maven.apache.org/maven2" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="packages_cloudt" />
+      <option name="name" value="maven-cloudt" />
+      <option name="url" value="https://packages.glodon.com/artifactory/maven-cloudt-public" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="gcbp" />
+      <option name="name" value="maven-gcbp-private" />
+      <option name="url" value="https://packages.glodon.com/artifactory/maven-gcbp-private" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="packages_cloudtsdk" />
+      <option name="name" value="maven-cloudt" />
+      <option name="url" value="https://packages.glodon.com/artifactory/maven-cloudtsdk-public" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="central" />
+      <option name="name" value="Maven Central repository" />
+      <option name="url" value="https://repo1.maven.org/maven2" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="jboss.community" />
+      <option name="name" value="JBoss Community repository" />
+      <option name="url" value="https://repository.jboss.org/nexus/content/repositories/public/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="gect" />
+      <option name="name" value="maven-gect-private" />
+      <option name="url" value="https://packages.glodon.com/artifactory/maven-gect-private" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="Package_bim5dtech" />
+      <option name="name" value="Package_bim5dtech" />
+      <option name="url" value="https://packages.glodon.com/artifactory/maven-bim5d-tech-public" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="maven-proxy-repo1" />
+      <option name="name" value="maven-center" />
+      <option name="url" value="https://packages.glodon.com/artifactory/maven-proxy-repo1/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="alimaven" />
+      <option name="name" value="maven-proxy-aliyun" />
+      <option name="url" value="https://packages.glodon.com/artifactory/maven-proxy-aliyun/" />
+    </remote-repository>
+  </component>
+</project>
