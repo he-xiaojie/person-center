@@ -1,0 +1,641 @@
+#bim5d:
+#  app_secret: UEdYu8hTZbsl5hudrdqtExOM1b5LiW3k
+bim5d:
+  app_account_url: ${account.domain}/oauth2/token
+  app_secret: 8IGq8NEXzawa8mLwGkxBBBWjGARo2Yxm
+info:
+  name: 方案管理
+logging:
+  level:
+    com:
+      glodon:
+        sg: info
+    root: info
+
+pc:
+  db:
+    version: 1041
+platform:
+  api:
+    url:
+      addr: ${domain}:9003/bim5d_platform
+
+
+
+server:
+  port: 8088
+spring:
+  application:
+    name: technical-scheme
+  endpoints:
+    web:
+      exposure:
+        include: restart,info,health,gateway
+  endpoint:
+    restart:
+      enabled: true
+    health:
+      show-details: always
+  freemarker:
+    suffix: .ftl
+  main:
+    allow-bean-definition-overriding: true
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 1000MB
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    password: ${mysql.password}
+    url: jdbc:mysql://${mysql.host}:${mysql.port}/gcbptech_scheme?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&&allowMultiQueries=true&useAffectedRows=true&useSSL=false
+    username: ${mysql.username}
+  redis:
+    host: ${redis.host}
+    password: ${redis.password}
+    pool:
+      max-active: 1000
+      max-wait: -1
+    port: 6379
+    retryAttempts: 5
+    retryInterval: 5000
+    timeout: 30000
+track:
+  item:
+    status: true
+upgrade: true
+
+mybatis-plus:
+  mapper-locations: classpath*:com/glodon/sg/techno/**/*.xml
+
+
+verify:
+  attachment:
+    db: false
+
+#BIM-TECH-GATEWAY-SERVICE:
+#  ribbon:
+#    NFLoadBalancerRuleClassName: com.glodon.sg.techno.ribbon.rule.CustomizeZoneAvoidanceRule
+#TECHNICAL-BASIS-SERVICE:
+#  ribbon:
+#    NFLoadBalancerRuleClassName: com.glodon.sg.techno.ribbon.rule.CustomizeZoneAvoidanceRule
+#TECH-BRIDGE-V4:
+#  ribbon:
+#    NFLoadBalancerRuleClassName: com.glodon.sg.techno.ribbon.rule.CustomizeZoneAvoidanceRule
+#TECH-COLLABORATION-SERVICE-V4:
+#  ribbon:
+#    NFLoadBalancerRuleClassName: com.glodon.sg.techno.ribbon.rule.CustomizeZoneAvoidanceRule
+#TECH-CUSTOMIZE-V4:
+#  ribbon:
+#    NFLoadBalancerRuleClassName: com.glodon.sg.techno.ribbon.rule.CustomizeZoneAvoidanceRule
+#TECH-DESIGNER-V4:
+#  ribbon:
+#    NFLoadBalancerRuleClassName: com.glodon.sg.techno.ribbon.rule.CustomizeZoneAvoidanceRule
+#TECH-HUB-V4:
+#  ribbon:
+#    NFLoadBalancerRuleClassName: com.glodon.sg.techno.ribbon.rule.CustomizeZoneAvoidanceRule
+#TECH-LAYOUT-V4:
+#  ribbon:
+#    NFLoadBalancerRuleClassName: com.glodon.sg.techno.ribbon.rule.CustomizeZoneAvoidanceRule
+#TECH-LEAN-V4:
+#  ribbon:
+#    NFLoadBalancerRuleClassName: com.glodon.sg.techno.ribbon.rule.CustomizeZoneAvoidanceRule
+#TECH-MANAGE-V4:
+#  ribbon:
+#    NFLoadBalancerRuleClassName: com.glodon.sg.techno.ribbon.rule.CustomizeZoneAvoidanceRule
+#TECH-PM-V4:
+#  ribbon:
+#    NFLoadBalancerRuleClassName: com.glodon.sg.techno.ribbon.rule.CustomizeZoneAvoidanceRule
+#TECH-PREVIEW-V4:
+#  ribbon:
+#    NFLoadBalancerRuleClassName: com.glodon.sg.techno.ribbon.rule.CustomizeZoneAvoidanceRule
+#TECH-SCHEDULER-V4:
+#  ribbon:
+#    NFLoadBalancerRuleClassName: com.glodon.sg.techno.ribbon.rule.CustomizeZoneAvoidanceRule
+#TECH-SCIENCE-V4:
+#  ribbon:
+#    NFLoadBalancerRuleClassName: com.glodon.sg.techno.ribbon.rule.CustomizeZoneAvoidanceRule
+#TECH-SERVICE-EXTEND-V4:
+#  ribbon:
+#    NFLoadBalancerRuleClassName: com.glodon.sg.techno.ribbon.rule.CustomizeZoneAvoidanceRule
+#gcbp-technical-scheme:
+#  ribbon:
+#    NFLoadBalancerRuleClassName: com.glodon.sg.techno.ribbon.rule.CustomizeZoneAvoidanceRule
+
+db:
+  router:
+    switch: true
+debug: true
+project:
+  host: http://geip-pre.glodon.com
+publish:
+  env: dev
+springfox:
+  documentation:
+    swagger:
+      v2:
+        host: geip-pre.glodon.com/
+subscribe:
+  msg:
+    flag: false
+techno:
+  ribbon:
+    customize: true
+validate:
+  first:
+    user:
+      task: false
+
+cloudt:
+  api:
+    bim5d:
+      appKey: 848ea1638e6945dd8239c81ef32ef804
+      appSecret: Fc4EO9VGqOOcMFG5
+      userName: bim5d_platform
+    url:
+      addr: ${openApi.domain}
+  product:
+    code: bim-tech-board
+    url: http://bim5d-platform.glodon.com/bim5d-web/basic/
+  role:
+    admin:
+      name: bim5d-mgr
+  url:
+    addr: ${domain}
+    cloudt2: true
+    port: 80
+
+#eureka:
+#  client:
+#    healthcheck:
+#      enabled: true
+#    service-url:
+#      defaultZone: http://10.244.72.87:8088/eureka
+#  instance:
+#    hostname: ${hostname:localhost}
+#    instance-id: ${spring.cloud.client.ip-address:${spring.cloud.client.ipAddress:}}:${server.port}
+#    ip-address: ${spring.cloud.client.ip-address}
+#    lease-expiration-duration-in-seconds: 90
+#    lease-renewal-interval-in-seconds: 30
+#    prefer-ip-address: true
+
+app:
+  message:
+    id: 155
+bimface:
+  api:
+    base:
+      url: ${bimface.api.domain}
+  file:
+    url: ${bimface.file.domain}
+  m:
+    url: ${bimface.m.domain}
+  static:
+    url: ${bimface.static.domain}
+external:
+  app:
+    infos:
+      - appKey: 848ea1638e6945dd8239c81ef32ef804
+        productCode: bim-tech-board
+glodon:
+  account:
+    base:
+      url: ${account.domain}
+  api:
+    base:
+      url: ${api.domain}
+
+feign:
+  httpclient:
+    enabled: true
+  hystrix:
+    enabled: false
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 1800000
+ribbon:
+  ConnectTimeout: 1800000
+  MaxAutoRetries: 0
+  MaxAutoRetriesNextServer: 1
+  ReadTimeout: 1800000
+
+
+object-storage:
+  accessKeyId: NIFUJJ9RX7HHL5WVHBBQ
+  accessKeySecret: P9wnVXeK2mvSVU0bvrstalzMyFNrZD2OW7WTwRBz
+  bucketId: tech_bucket
+  bucketName: bim5d-tech-dev
+  endPoint: https://obs.cn-north-4.myhuaweicloud.com
+  externalEndPoint: https://obs.cn-north-4.myhuaweicloud.com
+  externalEndpoint: true
+  pathStyleAccess: false
+  protocol: S3_HW
+  transcodeDstFolder: MPC_TRANSCODE_DST
+  transcodeSrcFolder: MPC_TRANSCODE_SRC
+  work:
+    flow: workflow_videoframextra01
+
+
+http:
+  connectTimeout: 5000
+  connectionRequestTimeout: 2000
+  defaultMaxPerRoute: 100
+  maxIdleTime: 1
+  maxTotal: 500
+  socketTimeout: 60000
+
+zookeeper:
+  connection:
+    baseSleepTimeMs: 2000
+    connectString: ${zookeeper.host}
+    maxRetries: 10
+sub:
+  code:
+    subSystemEntranceMaps:
+      - entranceCode: tech_ultimate_entrance
+        subSystemCode: bim-tech-board
+      - entranceCode: tech_hou_entrance
+        subSystemCode: bim-tech-board-hou
+      - entranceCode: tech_inf_entrance
+        subSystemCode: bim-tech-board-Inf
+
+init:
+  table:
+    revision:
+      common:
+        tables:
+          - node_model_catalog
+          - node_model_file
+          - process_animation
+          - user_animation
+      tables:
+        - element_order
+        - element_order_default
+        - feature_animation
+        - max3d_edo
+        - schedule
+        - schedule_calendar
+        - schedule_edo
+        - schedule_filter
+        - schedule_option
+        - schedule_relation
+        - simulate_display_config
+        - simulate_display_plan
+        - simulate_dynm_feature
+        - simulate_viewer
+        - simulate_viewer_trans_setting
+        - simulation
+        - craft_report
+        - craft_report_prop
+        - craft_report_prop_value
+        - tech_project
+        - control_point
+        - control_point_group
+        - control_point_item
+        - control_point_item_option
+        - craft_control_point_relation
+        - craft_description
+        - craft_description_attachment
+        - craft_library
+        - matter_track_control_point
+        - matter_track_control_point_attachment
+        - matter_track_control_point_item_value
+        - matter_track_detail
+        - matter_track_detail_edo
+        - matter_track_detail_expand_data
+        - matter_track_detail_procedure
+        - matter_track_detail_record
+        - matter_track_detail_record_attachment
+        - matter_track_expand_column
+        - plan_customer_category
+        - plan_segment_relation
+        - process_animation
+        - node_model_catalog
+        - node_model_file
+        - no_model_bill
+        - user_animation
+        - chongqing_special_attach
+        - chongqing_project
+        - budget_file
+        - bq_title
+        - bq_item
+        - norm_item
+        - usage_qua
+        - resource
+        - resource_mixture_ratio
+        - bq_trade_summary
+        - budget_file_group
+        - gbq_bqitem_edo_relation
+        - gbq_bqitem_bar_relation
+        - bill_scope
+        - bill_scope_relate
+        - bill_scope_edo
+        - budget_option
+        - chongqing_schedule_segment
+        - matter_track_dwg
+        - matter_track
+        - max3d_file
+  tables:
+    initDataDTOList:
+      - path: 应用数据/BIM5D/bim-tech-board/三维交底
+        tables:
+          - node_model_catalog
+          - node_model_file
+          - node_model_file_mark
+          - attachment
+        type: NODE_MODEL
+      - path: 应用数据/BIM5D/bim-tech-board/三维交底
+        tables:
+          - node_model_file_history
+        type: HISTORY
+      - tables:
+          - simulate_viewer_trans_setting
+          - simulation
+          - simulate_viewer
+          - simulate_display_plan
+          - simulate_display_config
+          - simulate_dynm_feature
+          - element_order
+          - feature_animation
+          - schedule_calendar
+          - schedule_filter
+          - schedule_option
+          - max3d_file
+          - user_animation
+        type: PC
+      - tables:
+          - disclosure_category
+        type: DISCLOSURE
+      - tables:
+          - inspect_maintenance
+          - inspect_strength_grade
+        type: INSPECT
+      - tables:
+          - tech_record_basic
+        type: TECH_RECORD
+    sourceDepartmentId: 302666323440128
+    sourceOrgId: 302666873111040
+    sourceProjectId: 302666873225728
+    tableRelations:
+      - relateFieldName: parent_id
+        relateTableName: node_model_catalog
+        tableName: node_model_catalog
+      - relateFieldName: full_path
+        relateTableName: node_model_catalog
+        tableName: node_model_catalog
+      - relateFieldName: catalog_id
+        relateTableName: node_model_catalog
+        tableName: node_model_file
+      - relateFieldName: node_model_file_id
+        relateTableName: node_model_file
+        tableName: node_model_file_mark
+      - relateFieldName: node_model_file_id
+        relateTableName: node_model_file
+        tableName: node_model_file_history
+      - relateFieldName: parent_id
+        relateTableName: node_model_file_mark
+        tableName: attachment
+      - relateFieldName: catalog_id
+        relateTableName: node_model_catalog
+        tableName: node_model_file_history
+      - relateFieldName: simulation_id
+        relateTableName: simulation
+        tableName: simulate_viewer
+      - relateFieldName: simulate_viewer_id
+        relateTableName: simulate_viewer
+        tableName: simulate_viewer_trans_setting
+      - relateFieldName: simulate_viewer_id
+        relateTableName: simulate_viewer
+        tableName: feature_animation
+      - relateFieldName: simulate_display_plan_id
+        relateTableName: simulate_display_plan
+        tableName: simulate_display_config
+      - relateFieldName: simulate_display_plan_id
+        relateTableName: simulate_display_plan
+        tableName: simulate_dynm_feature
+      - relateFieldName: simulate_display_plan_id
+        relateTableName: simulate_display_plan
+        tableName: element_order
+      - relateFieldName: parent_id
+        relateTableName: feature_animation
+        tableName: feature_animation
+      - relateFieldName: disclosure_id
+        relateTableName: disclosure
+        tableName: disclosure_file_link
+      - relateFieldName: full_path
+        relateTableName: disclosure_tree_catalog
+        tableName: disclosure_tree_catalog
+      - relateFieldName: exam_pager_id
+        relateTableName: exam_pager
+        tableName: exam_subject
+      - relateFieldName: exam_subject_id
+        relateTableName: exam_subject
+        tableName: exam_subject_item
+      - relateFieldName: exam_pager_id
+        relateTableName: exam_pager
+        tableName: exam_user
+      - relateFieldName: parent_id
+        relateTableName: scheme_manage
+        tableName: attachment
+      - relateFieldName: target_id
+        relateTableName: scheme_manage
+        tableName: t_notice
+      - relateFieldName: connection_id
+        relateTableName: scheme_manage
+        tableName: view_count
+      - relateFieldName: target_id
+        relateTableName: scheme_manage
+        tableName: trace
+      - relateFieldName: scheme_id
+        relateTableName: scheme_manage
+        tableName: scheme_inspection_link
+      - relateFieldName: scheme_manage_id
+        relateTableName: scheme_manage
+        tableName: scheme_inspection
+      - relateFieldName: target_id
+        relateTableName: scheme_manage
+        tableName: bim_integration_relation
+      - relateFieldName: reference_id
+        relateTableName: scheme_manage
+        tableName: disclosure_file_link
+      - relateFieldName: target_id
+        relateTableName: scheme_manage
+        tableName: flow_step_detail
+      - relateFieldName: full_path
+        relateTableName: scheme_manage_tree_catalog
+        tableName: scheme_manage_tree_catalog
+      - relateFieldName: target_id
+        relateTableName: scheme_manage
+        tableName: flow_template_link
+      - relateFieldName: target_id
+        relateTableName: scheme_manage
+        tableName: flow_link
+
+org:
+  id:
+    condition:
+      checkOrgIdTables:
+        - scheme_manage
+        - scheme_inspection
+        - scheme_inspection_link
+        - flow
+        - flow_link
+        - flow_step
+        - flow_step_delete_record
+        - flow_step_detail
+        - flow_step_detail_delete_record
+        - disclosure
+        - disclosure
+        - disclosure_file_link
+        - disclosure_inspection
+        - disclosure_receive
+        - exam_library_subject
+        - exam_pager
+        - exam_subject
+        - exam_subject_item
+        - exam_user
+        - auditing
+        - task_handle_status
+        - no_model_bill
+        - chongqing_project
+        - chongqing_schedule_segment
+        - chongqing_special_attach
+        - element_order
+        - element_order_default
+        - max3d_edo
+        - max3d_file
+        - plan_customer_category
+        - plan_segment_relation
+        - schedule
+        - schedule_calendar
+        - schedule_edo
+        - schedule_filter
+        - schedule_option
+        - simulate_display_config
+        - simulate_display_plan
+        - simulate_dynm_feature
+        - simulate_viewer
+        - simulate_viewer_trans_setting
+        - simulation
+        - tech_project
+        - attachment
+        - trace
+        - bar_material_dimension
+        - bar_material_dimension_segment
+        - bar_material_quantity
+        - bar_material_quantity_segment
+        - material_dimension
+        - material_dimension_segment
+        - material_quantity
+        - material_quantity_segment
+        - project_file_edo
+        - quality_safety
+        - quality_safety_attach
+        - quality_safety_fine_detail
+        - model_point
+        - node_component_catalog
+        - node_component_file
+        - node_model_catalog
+        - node_model_file
+        - node_model_file_edo
+        - node_model_file_measure
+        - process_animation
+        - user_animation
+        - blueprint_catalog
+        - blueprint_category
+        - blueprint_file
+        - blueprint_file_link
+        - blueprint_file_mark
+        - blueprint_file_version
+        - blueprint_form
+        - blueprint_form_execute_record
+        - blueprint_form_floor
+        - blueprint_form_problem
+        - blueprint_form_sign_file
+        - blueprint_form_warning
+        - blueprint_major
+        - blueprint_problem
+        - blueprint_problem_attachment
+        - blueprint_template
+        - blueprint_work_handover
+        - blueprint_file_package
+        - blueprint_file_package_relation
+        - view_attachment_category
+        - control_point
+        - control_point_group
+        - control_point_item
+        - control_point_item_option
+        - craft_control_point_relation
+        - blueprint_problem_record
+        - blueprint_file_wbs
+        - node_model_file_mark
+        - edo_style
+        - view_count
+        - schedule_relation
+        - feature_animation
+        - exam_user_data
+        - craft_description
+        - craft_description_attachment
+        - craft_library
+        - craft_report
+        - craft_report_prop
+        - craft_report_prop_value
+        - report
+        - report_group
+        - matter_track_report_record
+        - matter_track_dwg
+        - report_track_detail_relation
+        - matter_track_detail_record_attachment
+        - matter_track_detail_record
+        - matter_track_detail_procedure
+        - matter_track_detail_expand_data
+        - matter_track_detail_edo
+        - matter_track_detail_catalog
+        - edo_link_file
+        - matter_track_control_point
+        - matter_track_control_point_attachment
+        - matter_track_control_point_item_value
+        - matter_track_detail
+        - matter_track
+        - matter_track_expand_column
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
+---
+paas:
+  mq:
+    rabbitmq:
+      host: ${rabbitmq.host}
+      port: ${rabbitmq.port}
+      username: ${rabbitmq.username}
+      password: ${rabbitmq.password}
+      virtual-host: /
+      group-id: GID_DEV_GLODON_UAT_GCBPTECH_SCHEME
+      scope: ${rabbitmq.scope}
+#      exchange-name: GCBP
+#      dlx-exchange-name: DLX_GCBP
+spring:
+  profiles: rabbitmq
+---
+paas:
+  mq:
+    ons:
+      access-key: ${ons.access-key}
+      access-test: test
+      group-id: GID_DEV_GLODON_UAT_GCBPTECH_SCHEME
+      message-model: CLUSTERING
+      namesrv-addr: ${ons.namesrv-addr}
+      scope: ${ons.scope}
+      secret-key: ${ons.secret-key}
+      topic: SYS_MGR_V2
+spring:
+  profiles: ons
