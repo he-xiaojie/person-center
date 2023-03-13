@@ -1,5 +1,7 @@
 package com.hexiaojie.person.center.designpattern;
 
+import java.util.concurrent.Executors;
+
 /**
  *
  * 单例模式-DCL（双重检查锁）
